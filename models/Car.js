@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const Car = new Schema({
     image: String,
     name: String,
-    year: Number,
-    speed: Number
+    year: String,
+    speed: String
 })
 module.exports = mongoose.model("Car", Car)
