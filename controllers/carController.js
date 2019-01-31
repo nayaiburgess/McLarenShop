@@ -1,4 +1,5 @@
 const car = require('../models/Car')
+const review = require('../models/Review')
 
 const carController = {
     index: (req, res) => {
@@ -17,15 +18,9 @@ const carController = {
             res.send(newcar)
         })
     },
-    show: (req, res) => {
-        const carId = req.params.id
-        car.findById(carId).then((car) => {
-            res.send(car)
-        })
-      },
     delete: (req, res) => {
-        const carId = req.params.id
-        car.findByIdAndRemove(carId).then(() => {
+        car.findByIdAndRemove(req.params.id)
+            .then(() => {
             res.sendStatus(200)
         })
     }

@@ -1,29 +1,39 @@
-const reviews = require('../models/Review')
+// const reviews = require('../models/Review')
+// const car = require('../models/Car')
 
-const reviewController = {
+// const reviewController = {
   
-    create: (req, res) => {
-        reviews.create({
-            username: req.body.username,
-            comments: req.body.comments
-        }).then(newreview => {
-            res.send(newreview)
-        })
-    },
+//     create: (req, res) => {
+//         const carId = req.params.id 
 
-    update: (req, res) => {
-        const reviewId = req.params.id
-        reviews.findByIdAndUpdate(reviewId, req.body, {new: true}).then((review) => {
-          res.send(review)  
-        })
-    },
+//         car.findById(carId).then(
+//             (car) =>{
+//                 reviews.create({
+//                     username: req.body.username,
+//                     comments: req.body.comments
+//                 }).then(newreview => {
+//                     car.reviews.push(newreview)
+//                     car.save()
+//                     res.send(newreview)
+//                 })
+//             }
+//         )
+        
+//     },
 
-    delete: (req, res) => {
-        const reviewId = req.params.id
-        reviews.findByIdAndRemove(reviewId).then(() => {
-            res.sendStatus(200)
-        })
-    }
-}
+//     update: (req, res) => {
+//         const reviewId = req.params.id
+//         reviews.findByIdAndUpdate(reviewId, req.body, {new: true}).then((review) => {
+//           res.send(review)  
+//         })
+//     },
 
-module.exports = reviewController
+//     delete: (req, res) => {
+//         const reviewId = req.params.id
+//         reviews.findByIdAndRemove(reviewId).then(() => {
+//             res.sendStatus(200)
+//         })
+//     }
+// }
+
+// module.exports = reviewController
